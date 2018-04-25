@@ -11,6 +11,22 @@
   import defaultOptions from './options'
   const Quill = window.Quill || _Quill
 
+  var Clipboard = Quill.import('modules/clipboard');
+  var Delta = Quill.import('delta');
+
+  class PlainClipboard extends Clipboard {
+      convert(html = null) {
+          if (typeof html === 'string') {
+              this.container.innerHTML = html;
+          }
+          let text = this.container.innerText;
+          this.container.innerHTML = '';
+          return new Delta().insert(text);
+      }
+  }
+
+  Quill.register('modules/clipboard', PlainClipboard, true);
+
   // pollfill
   if (typeof Object.assign != 'function') {
     Object.defineProperty(Object, 'assign', {
