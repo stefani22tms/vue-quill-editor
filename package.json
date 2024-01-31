@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "object-assign": "^4.1.1",
-    "quill": "^1.3.4"
+    "quill": "2.0.0-beta.2"
   },
   "expDependencies": {
     "node-sass": "^4.7.2",

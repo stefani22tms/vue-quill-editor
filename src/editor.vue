@@ -11,8 +11,8 @@
   import defaultOptions from './options'
   const Quill = window.Quill || _Quill
 
-  var Clipboard = Quill.import('modules/clipboard');
-  var Delta = Quill.import('delta');
+  let Clipboard = Quill.import('modules/clipboard');
+ // let Delta = Quill.import('delta');
 
   Quill.register('modules/clipboard', Clipboard, true);
 
